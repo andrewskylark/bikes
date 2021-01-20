@@ -1,0 +1,24 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 51px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: $text-accent;
+  background-color: $main;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $main-hover;
+  }
+
+  &:active {
+    background-color: $main-active;
+  }
+}

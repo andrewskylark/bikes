@@ -1,10 +1,20 @@
 $main: #0ad9c6;
+$main-hover: #8bebd3;
+$main-active: #085850;
 $text-main: #1f1f1f;
 $text-accent: #000000;
 $text-light: #ffffff;
+$text-input: #1c1c1c;
+$link-mobile: #48494d;
 $bg: #131314;
 $bg-accent: #f6f7f9;
 $bg-menu: #f6f6f6;
 $desktop-width: 1024px;
 $tablet-width: 768px;
 $mobile-width: 320px;
+$max-width: 1440px;
+
+@mixin reset-text {
+  margin: 0;
+  padding: 0;
+}

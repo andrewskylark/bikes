@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,75 @@
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="">
 </head>
+
 <body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <header class="page-header">
+
+    <div class="wrapper wrapper--header">
+
+      <nav class="nav nav--closed nav--no-js">
+
+        <ul class="nav__list site-list ul-clear">
+          <li class="site-list__item">
+            <a class="site-list__link" href="#about_us">
+              О нас
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="#bike_types">
+              Виды велосипедов
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="#bikes_video">
+              Видео про велосипеды
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="#contacts">
+              Контакты
+            </a>
+          </li>
+        </ul>
+
+        <button class="nav__toggle" type="button" aria-label="открыть или закрыть меню"></button>
+
+      </nav>
+
+
+      <div class="page-header__title">
+        <a class="page-header__logo page-header__logo--no-js" aria-label="логотип сайта moon и ссылка на главную">
+          <img src="img/logo.svg" width="86" height="20" alt="логотип сайта moon и ссылка на главную" loading="eager">
+        </a>
+        <h1>Мы продаем велосипеды</h1>
+        <p>Наш магазин отбирает только самые лучшие велосипеды для продажи.</p>
+      </div>
+
+      <div class="page-header__form">
+
+        <form class="form" method="post">
+          <h2 class="visually-hidden">форма подбора велосипеда</h2>
+          <p>
+            Заполните поля ниже и мы подберем велосипед Вашей мечты
+          </p>
+
+          <div class="form__inputs">
+            <label for="tel">
+              <input type="tel" name="tel" id="tel" placeholder="Введите Ваше Имя">
+            </label>
+
+            <label for="name">
+              <input type="name" name="name" id="name" placeholder="Введите Ваш номер телефона">
+            </label>
+
+          </div>
+          <button class="form__btn btn" type="submit">Подобрать велосипед мечты</button>
+        </form>
+
+      </div>
+    </div>
+  </header>
+  <script src="/js/main.js"></script>
 </body>
+
 </html>
