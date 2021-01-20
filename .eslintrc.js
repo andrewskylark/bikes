@@ -1,12 +1,11 @@
 module.exports = {
-  "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-          "jsx": true
-      }
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true
   },
-  "rules": {
-      "semi": "error"
+  "extends":
+    "htmlacademy/es6"
   }
-}
