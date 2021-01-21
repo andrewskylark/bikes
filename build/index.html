@@ -10,7 +10,7 @@
   <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="">
 </head>
 
-<body>
+<body class="page__body">
   <header class="page-header">
 
     <div class="wrapper wrapper--header">
@@ -62,12 +62,12 @@
           </p>
 
           <div class="form__inputs">
-            <label for="tel">
-              <input type="tel" name="tel" id="tel" placeholder="Введите Ваше Имя">
+            <label for="name">
+              <input type="text" name="name" id="name" placeholder="Введите Ваше Имя">
             </label>
 
-            <label for="name">
-              <input type="name" name="name" id="name" placeholder="Введите Ваш номер телефона">
+            <label for="tel">
+              <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона">
             </label>
 
           </div>
@@ -77,6 +77,77 @@
       </div>
     </div>
   </header>
+
+  <main class="page-main">
+
+    <section class="page-main__about about" id="about_us">
+      <h2>Несколько фактов о нас</h2>
+      <ol class="about__list ul-clear">
+        <li class="about__item about__item--smaller">
+          Самый широкий выбор велосипедов!
+        </li>
+        <li class="about__item">
+          Доставка велосипедов по всей России!
+        </li>
+        <li class="about__item">
+          Большой выбор крутых аксессуаров!
+        </li>
+        <li class="about__item">
+          Профессиональные консультации!
+        </li>
+      </ol>
+
+    </section>
+
+    <section class="page-main__bikes bikes" id="bike_types">
+      <h2>Виды велосипедов</h2>
+      <ul class="bikes__list ul-clear">
+        <li class="bikes__item">
+          <a href="#!" class="bikes__link">
+            <h3>Дорожный велосипед</h3>
+            <picture>
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/road-bike-small.webp 1x, img/road-bike-small@2x.webp 2x">
+              <source type="image/webp" srcset="img/road-bike.webp 1x, img/road-bike@2x.webp 2x">
+
+              <img src="img/road-bike.jpg" srcset="img/road-bike@2x.jpg 2x" alt="фотография дорожного велосипеда" width="342" height="503">
+            </picture>
+            <p> <span>смотреть подробнее
+              </span>
+            </p>
+          </a>
+        </li>
+        <li class="bikes__item">
+          <a href="#!" class="bikes__link">
+            <h3>Горный велосипед</h3>
+            <picture>
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/mount-bike-small.webp 1x, img/mount-bike-small@2x.webp 2x">
+              <source type="image/webp" srcset="img/mount-bike.webp 1x, img/mount-bike@2x.webp 2x">
+
+              <img src="img/mount-bike.jpg" srcset="img/mount-bike@2x.jpg 2x" alt="фотография горного велосипеда" width="342" height="566">
+            </picture>
+            <p> <span>смотреть подробнее
+              </span>
+            </p>
+          </a>
+        </li>
+        <li class="bikes__item">
+          <a href="#!" class="bikes__link">
+            <h3>Детский велосипед</h3>
+            <picture>
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/child-bike-small.webp 1x, img/child-bike-small@2x.webp 2x">
+              <source type="image/webp" srcset="img/child-bike.webp 1x, img/child-bike@2x.webp 2x">
+
+              <img src="img/child-bike.jpg" srcset="img/child-bike@2x.jpg 2x" alt="фотография детского велосипеда" width="342" height="513">
+            </picture>
+            <p> <span>смотреть подробнее
+              </span>
+            </p>
+          </a>
+        </li>
+      </ul>
+
+    </section>
+  </main>
 
   <footer class="page-footer">
 
@@ -98,7 +169,7 @@
 
     </section>
 
-    <section class="page-footer__contacts contacts">
+    <section class="page-footer__contacts contacts" id="contacts">
 
       <h2 class="visually-hidden">
         Наши контакты

@@ -1,0 +1,39 @@
+.page-main__about {
+  min-height: 503px;
+  margin: 0 auto;
+  padding: 150px 9.5% 100px;
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    min-height: auto;
+    padding: 13px 14% 31px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    min-height: auto;
+    padding: 32px 4% 34px;
+  }
+}
+
+.page-main__bikes {
+  min-height: 1038px;
+  padding: 149px 11% 50px;
+
+  @media screen and (max-width: 1200px) {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    min-height: auto;
+    padding: 50px 11.5% 50px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding: 50px 4% 12px;
+  }
+}

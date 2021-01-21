@@ -16,28 +16,9 @@
   }
 
   @media screen and (max-width: $desktop-width - 1) {
+    min-height: auto;
     background: none;
   }
-
-  // @media screen and (max-width: $desktop-width - 1) {
-  //   background-image: url("../img/bg-header-tab.jpg");
-  //   background-size: cover, auto;
-
-  //   @media (min-resolution: 2dppx) {
-  //     background-image: url("../img/bg-header-tab@2x.jpg");
-  //     background-size: cover, auto;
-  //   }
-  // }
-
-  // @media screen and (max-width: $tablet-width - 1) {
-  //   background-image: url("../img/bg-header-mob.jpg");
-  //   background-position: top;
-
-  //   @media (min-resolution: 2dppx) {
-  //     background-image: url("../img/bg-header-mob@2x.jpg");
-  //     background-position: top;
-  //   }
-  // }
 }
 
 .page-header__title {
