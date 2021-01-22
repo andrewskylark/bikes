@@ -63,13 +63,12 @@
           </p>
 
           <div class="form__inputs">
-            <label for="name">
-              <input type="text" name="name" id="name" placeholder="Введите Ваше Имя">
-            </label>
+            <label for="name" class="visually-hidden">Введите Ваше Имя</label>
+              <input type="text" name="name" id="name" placeholder="Введите Ваше Имя" minlength="6" maxlength="25" required>
 
-            <label for="tel">
-              <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона">
-            </label>
+            <label for="tel"class="visually-hidden">Введите Ваш номер телефона</label>
+              <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required pattern="[0-9]{8}">
+
 
           </div>
           <button class="form__btn btn" type="submit">Подобрать велосипед мечты</button>
@@ -153,6 +152,28 @@
         </li>
       </ul>
 
+    </section>
+
+    <section class="page-main__video" id="bikes_video">
+      <h2>
+        Видео про велосипеды
+      </h2>
+      <p>
+        В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.
+      </p>
+      <div class="page-main__video-wrapper">
+        <picture>
+          <source type="image/webp" media="(max-width: 767px)" srcset="img/video-mob.webp 1x, img/video-mob@2x.webp 2x">
+          <source type="image/webp" media="(max-width: 1023px)"
+            srcset="img/video-tab.webp 1x, img/video-tab@2x.webp 2x">
+          <source type="image/webp" srcset="img/video-dt.webp 1x, img/video-dt@2x.webp 2x">
+
+          <img src="img/video-dt.jpg" srcset="img/video-dt@2x.jpg 2x" alt="фото кадра фидео про велосипеды" width="929"
+            height="522">
+        </picture>
+
+        <button type="button" aria-label="кнопка включить видео"></button>
+      </div>
     </section>
   </main>
 
