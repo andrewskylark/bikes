@@ -40,16 +40,15 @@ const MIN_TITLE_LENGTH = 6;
     name.reportValidity();
   });
 
-  // tel.addEventListener(`input`, () => {
-  //   if (/\D/.test(tel.value)) {
-  //     tel.setCustomValidity(`Введите номер в формате 0012345678`);
-  //   } else {
-  //     tel.setCustomValidity(``);
-  //     tel.style.outline = `none`;
-  //     console.log(`VALID`)
-  //   }
-  //   tel.reportValidity();
-  // });
+  tel.addEventListener(`input`, () => {
+    if (/\D/.test(tel.value)) {
+      tel.setCustomValidity(`Введите номер в формате 0012345678`);
+    } else {
+      tel.setCustomValidity(``);
+      tel.style.outline = `none`;
+    }
+    tel.reportValidity();
+  });
 
   submitBtn.addEventListener(`click`, () => {
     for (let input of inputs) {
@@ -61,4 +60,3 @@ const MIN_TITLE_LENGTH = 6;
     }
   });
 })();
-

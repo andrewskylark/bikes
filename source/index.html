@@ -5,10 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+  content="интернет-магазин велосипедов: дорожные, горные, детские велосипеды и другие! Напишите нам и выберите велосипед мечты">
   <title>Велосипеды</title>
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
-    crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-regular.woff2"
+  as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-300.woff2"
+  as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-600.woff2"
+  as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-700.woff2"
+  as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="css/style.min.css" as="style">
 </head>
 
 <body class="page__body">
@@ -47,7 +56,8 @@
 
 
       <div class="page-header__title">
-        <a class="page-header__logo page-header__logo--no-js" aria-label="логотип сайта moon и ссылка на главную">
+        <!--Для проверяющего: lighthouse сказал добавить href ссылке для >90% в SEO-->
+        <a class="page-header__logo page-header__logo--no-js" aria-label="логотип сайта moon и ссылка на главную" href="index.html">
           <img src="img/logo.svg" width="86" height="20" alt="логотип сайта moon и ссылка на главную" loading="eager">
         </a>
         <h1>Мы продаем велосипеды</h1>
@@ -64,10 +74,11 @@
 
           <div class="form__inputs">
             <label for="name" class="visually-hidden">Введите Ваше Имя</label>
-              <input type="text" name="name" id="name" placeholder="Введите Ваше Имя" minlength="6" maxlength="25" required>
+            <input type="text" name="name" id="name" placeholder="Введите Ваше Имя" minlength="6" maxlength="25"
+              required>
 
-            <label for="tel"class="visually-hidden">Введите Ваш номер телефона</label>
-              <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required pattern="[0-9]{8}">
+            <label for="tel" class="visually-hidden">Введите Ваш номер телефона</label>
+            <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required pattern="[0-9]{8}">
 
 
           </div>
@@ -109,7 +120,7 @@
               <source type="image/webp" media="(max-width: 1023px)"
                 srcset="img/road-bike-small.webp 1x, img/road-bike-small@2x.webp 2x">
               <source type="image/webp" srcset="img/road-bike.webp 1x, img/road-bike@2x.webp 2x">
-
+              <!-- 1х: 342px; 2x: 684px -->
               <img src="img/road-bike.jpg" srcset="img/road-bike@2x.jpg 2x" alt="фотография дорожного велосипеда"
                 width="342" height="503">
             </picture>
@@ -125,7 +136,7 @@
               <source type="image/webp" media="(max-width: 1023px)"
                 srcset="img/mount-bike-small.webp 1x, img/mount-bike-small@2x.webp 2x">
               <source type="image/webp" srcset="img/mount-bike.webp 1x, img/mount-bike@2x.webp 2x">
-
+              <!-- 1х: 342px; 2x: 684px -->
               <img src="img/mount-bike.jpg" srcset="img/mount-bike@2x.jpg 2x" alt="фотография горного велосипеда"
                 width="342" height="566">
             </picture>
@@ -141,7 +152,7 @@
               <source type="image/webp" media="(max-width: 1023px)"
                 srcset="img/child-bike-small.webp 1x, img/child-bike-small@2x.webp 2x">
               <source type="image/webp" srcset="img/child-bike.webp 1x, img/child-bike@2x.webp 2x">
-
+              <!-- 1х: 342px; 2x: 684px -->
               <img src="img/child-bike.jpg" srcset="img/child-bike@2x.jpg 2x" alt="фотография детского велосипеда"
                 width="342" height="513">
             </picture>
@@ -167,9 +178,9 @@
           <source type="image/webp" media="(max-width: 1023px)"
             srcset="img/video-tab.webp 1x, img/video-tab@2x.webp 2x">
           <source type="image/webp" srcset="img/video-dt.webp 1x, img/video-dt@2x.webp 2x">
-
+          <!-- 1х: 929px; 2x: 1858px -->
           <img src="img/video-dt.jpg" srcset="img/video-dt@2x.jpg 2x" alt="фото кадра фидео про велосипеды" width="929"
-            height="522">
+            height="522" loading="lazy">
         </picture>
 
         <button type="button" aria-label="кнопка включить видео"></button>
@@ -191,9 +202,9 @@
         <source type="image/webp" media="(max-width: 767px)" srcset="img/map-mob.webp 1x, img/map-mob@2x.webp 2x">
         <source type="image/webp" media="(max-width: 1023px)" srcset="img/map-tab.webp 1x, img/map-tab@2x.webp 2x">
         <source type="image/webp" srcset="img/map-dt.webp 1x, img/map-dt@2x.webp 2x">
-
+        <!-- 1х: 957px; 2x: 1914px -->
         <img src="img/map-dt.jpg" srcset="img/map-dt@2x.jpg 2x" alt="карта проезда к офису компании" width="957"
-          height="530">
+          height="530" loading="lazy">
       </picture>
 
     </section>
