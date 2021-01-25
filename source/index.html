@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description"
-  content="интернет-магазин велосипедов: дорожные, горные, детские велосипеды и другие! Напишите нам и выберите велосипед мечты">
+    content="интернет-магазин велосипедов: дорожные, горные, детские велосипеды и другие! Напишите нам и выберите велосипед мечты">
   <title>Велосипеды</title>
-  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-regular.woff2"
-  as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-300.woff2"
-  as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-600.woff2"
-  as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-700.woff2"
-  as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
+    crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-300.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-600.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="../fonts/open-sans-v18-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin="">
   <link rel="preload" href="css/style.min.css" as="style">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body class="page__body">
+<body class="page">
   <header class="page-header">
 
     <div class="wrapper wrapper--header">
@@ -57,16 +54,17 @@
 
       <div class="page-header__title">
         <!--Для проверяющего: lighthouse сказал добавить href ссылке для >90% в SEO-->
-        <a class="page-header__logo page-header__logo--no-js" aria-label="логотип сайта moon и ссылка на главную" href="index.html">
+        <a class="page-header__logo page-header__logo--no-js" aria-label="логотип сайта moon и ссылка на главную"
+          href="index.html">
           <img src="img/logo.svg" width="86" height="20" alt="логотип сайта moon и ссылка на главную" loading="eager">
         </a>
         <h1>Мы продаем велосипеды</h1>
         <p>Наш магазин отбирает только самые лучшие велосипеды для продажи.</p>
       </div>
 
-      <div class="page-header__form">
+      <div class="page-header__form form">
 
-        <form class="form" method="post">
+        <form method="post">
           <h2 class="visually-hidden">форма подбора велосипеда</h2>
           <p>
             Заполните поля ниже и мы подберем велосипед Вашей мечты
@@ -79,7 +77,6 @@
 
             <label for="tel" class="visually-hidden">Введите Ваш номер телефона</label>
             <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required pattern="[0-9]{8}">
-
 
           </div>
           <button class="form__btn btn" type="submit">Подобрать велосипед мечты</button>
@@ -94,16 +91,16 @@
     <section class="page-main__about about" id="about_us">
       <h2>Несколько фактов о нас</h2>
       <ol class="about__list ul-clear">
-        <li class="about__item about__item--smaller">
+        <li>
           Самый широкий выбор велосипедов!
         </li>
-        <li class="about__item">
+        <li>
           Доставка велосипедов по всей России!
         </li>
-        <li class="about__item">
+        <li>
           Большой выбор крутых аксессуаров!
         </li>
-        <li class="about__item">
+        <li>
           Профессиональные консультации!
         </li>
       </ol>
@@ -114,52 +111,52 @@
       <h2>Виды велосипедов</h2>
       <ul class="bikes__list ul-clear">
         <li class="bikes__item">
-          <a href="#!" class="bikes__link">
-            <h3>Дорожный велосипед</h3>
-            <picture>
-              <source type="image/webp" media="(max-width: 1023px)"
-                srcset="img/road-bike-small.webp 1x, img/road-bike-small@2x.webp 2x">
-              <source type="image/webp" srcset="img/road-bike.webp 1x, img/road-bike@2x.webp 2x">
-              <!-- 1х: 342px; 2x: 684px -->
-              <img src="img/road-bike.jpg" srcset="img/road-bike@2x.jpg 2x" alt="фотография дорожного велосипеда"
-                width="342" height="503">
-            </picture>
-            <p> <span>смотреть подробнее
-              </span>
-            </p>
-          </a>
+          <h3>Дорожный велосипед</h3>
+          <picture>
+            <source type="image/webp" media="(max-width: 1023px)"
+              srcset="img/road-bike-small.webp 1x, img/road-bike-small@2x.webp 2x">
+            <source type="image/webp" srcset="img/road-bike.webp 1x, img/road-bike@2x.webp 2x">
+            <!-- 1х: 342px; 2x: 684px -->
+            <img src="img/road-bike.jpg" srcset="img/road-bike@2x.jpg 2x" alt="фотография дорожного велосипеда"
+              width="342" height="503">
+          </picture>
+          <p> <a href="#!" class="bikes__link">
+              смотреть подробнее
+            </a>
+          </p>
         </li>
+
         <li class="bikes__item">
-          <a href="#!" class="bikes__link">
-            <h3>Горный велосипед</h3>
-            <picture>
-              <source type="image/webp" media="(max-width: 1023px)"
-                srcset="img/mount-bike-small.webp 1x, img/mount-bike-small@2x.webp 2x">
-              <source type="image/webp" srcset="img/mount-bike.webp 1x, img/mount-bike@2x.webp 2x">
-              <!-- 1х: 342px; 2x: 684px -->
-              <img src="img/mount-bike.jpg" srcset="img/mount-bike@2x.jpg 2x" alt="фотография горного велосипеда"
-                width="342" height="566">
-            </picture>
-            <p> <span>смотреть подробнее
-              </span>
-            </p>
-          </a>
+          <h3>Горный велосипед</h3>
+          <picture>
+            <source type="image/webp" media="(max-width: 1023px)"
+              srcset="img/mount-bike-small.webp 1x, img/mount-bike-small@2x.webp 2x">
+            <source type="image/webp" srcset="img/mount-bike.webp 1x, img/mount-bike@2x.webp 2x">
+            <!-- 1х: 342px; 2x: 684px -->
+            <img src="img/mount-bike.jpg" srcset="img/mount-bike@2x.jpg 2x" alt="фотография горного велосипеда"
+              width="342" height="566">
+          </picture>
+          <p>
+            <a href="#!" class="bikes__link">
+              смотреть подробнее
+            </a>
+          </p>
         </li>
+
         <li class="bikes__item">
-          <a href="#!" class="bikes__link">
-            <h3>Детский велосипед</h3>
-            <picture>
-              <source type="image/webp" media="(max-width: 1023px)"
-                srcset="img/child-bike-small.webp 1x, img/child-bike-small@2x.webp 2x">
-              <source type="image/webp" srcset="img/child-bike.webp 1x, img/child-bike@2x.webp 2x">
-              <!-- 1х: 342px; 2x: 684px -->
-              <img src="img/child-bike.jpg" srcset="img/child-bike@2x.jpg 2x" alt="фотография детского велосипеда"
-                width="342" height="513">
-            </picture>
-            <p> <span>смотреть подробнее
-              </span>
-            </p>
-          </a>
+          <h3>Детский велосипед</h3>
+          <picture>
+            <source type="image/webp" media="(max-width: 1023px)"
+              srcset="img/child-bike-small.webp 1x, img/child-bike-small@2x.webp 2x">
+            <source type="image/webp" srcset="img/child-bike.webp 1x, img/child-bike@2x.webp 2x">
+            <!-- 1х: 342px; 2x: 684px -->
+            <img src="img/child-bike.jpg" srcset="img/child-bike@2x.jpg 2x" alt="фотография детского велосипеда"
+              width="342" height="513">
+          </picture>
+          <p> <a href="#!" class="bikes__link">
+              смотреть подробнее
+            </a>
+          </p>
         </li>
       </ul>
 
