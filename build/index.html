@@ -54,7 +54,9 @@
         <div class="page-header__title">
           <!--Для проверяющего: lighthouse сказал добавить href ссылке для >90% в SEO-->
           <a class="page-header__logo page-header__logo--no-js" aria-label="логотип сайта moon и ссылка на главную" href="index.html">
-            <img src="img/logo.svg" width="86" height="20" alt="логотип сайта moon и ссылка на главную" loading="eager">
+            <svg width="86" height="20">
+              <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+            </svg>
           </a>
           <h1>Мы продаем велосипеды</h1>
           <p>Наш магазин отбирает только самые лучшие велосипеды для продажи.</p>
@@ -201,17 +203,11 @@
         <ul class="contacts__list ul-clear">
           <li class="contacts__item">
             <a class="contacts__link contacts__link--mail" aria-label="адрес электронной почты" href="mailto:puteshestviemechta@gmail.ru">
-              <svg class="contacts__icon" width="26" height="20">
-                <use xlink:href="img/sprite_auto.svg#icon-mail"></use>
-              </svg>
               puteshestviemechta@gmail.ru
             </a>
           </li>
           <li class="contacts__item">
             <a class="contacts__link contacts__link--phone" aria-label="контактный телефон" href="tel:+749978468446">
-              <svg class="contacts__icon" width="28" height="28">
-                <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
-              </svg>
               +7 (499) -784-684-46
             </a>
           </li>
