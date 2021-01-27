@@ -112,6 +112,7 @@
 
 .page-header__logo {
   display: block;
+  width: fit-content;
   margin-bottom: 22px;
 
   svg {
@@ -131,4 +132,12 @@
 
 .page-header__logo.page-header__logo--no-js {
   position: relative;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    top: auto;
+  }
 }
