@@ -77,7 +77,7 @@
               <input type="text" name="name" id="name" placeholder="Введите Ваше Имя" minlength="6" maxlength="25" required="">
 
               <label for="tel" class="visually-hidden">Введите Ваш номер телефона</label>
-              <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required="" pattern="[0-9]{8}">
+              <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required="" pattern="^\+?\d{6,13}">
             </div>
             <button class="form__btn btn" type="submit">Подобрать велосипед мечты</button>
           </form>
@@ -118,10 +118,7 @@
               <!-- 1х: 342px; 2x: 684px -->
               <img src="img/road-bike.jpg" srcset="img/road-bike@2x.jpg 2x" alt="фотография дорожного велосипеда" width="342" height="503">
             </picture>
-            <p> <a href="#!" class="bikes__link">
-                смотреть подробнее
-              </a>
-            </p>
+
           </li>
 
           <li class="bikes__item">
@@ -132,11 +129,6 @@
               <!-- 1х: 342px; 2x: 684px -->
               <img src="img/mount-bike.jpg" srcset="img/mount-bike@2x.jpg 2x" alt="фотография горного велосипеда" width="342" height="566">
             </picture>
-            <p>
-              <a href="#!" class="bikes__link">
-                смотреть подробнее
-              </a>
-            </p>
           </li>
 
           <li class="bikes__item">
@@ -147,10 +139,6 @@
               <!-- 1х: 342px; 2x: 684px -->
               <img src="img/child-bike.jpg" srcset="img/child-bike@2x.jpg 2x" alt="фотография детского велосипеда" width="342" height="513">
             </picture>
-            <p> <a href="#!" class="bikes__link">
-                смотреть подробнее
-              </a>
-            </p>
           </li>
         </ul>
 

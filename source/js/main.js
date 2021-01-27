@@ -1,5 +1,6 @@
 'use strict';
 const MIN_TITLE_LENGTH = 6;
+const PHONE_PATTERN = /^[\+]?[0-9]{3,12}$/;
 
 (() => {
   const nav = document.querySelector(`.nav`);
@@ -48,8 +49,9 @@ const MIN_TITLE_LENGTH = 6;
 
   if (tel) {
     tel.addEventListener(`input`, () => {
-      if (/\D/.test(tel.value)) {
-        tel.setCustomValidity(`Введите номер в формате 0012345678`);
+
+      if (PHONE_PATTERN.test(tel.value) === false) {
+        tel.setCustomValidity(`введите номер в формате с +7123456789 или 8123456789`);
       } else {
         tel.setCustomValidity(``);
         tel.classList.remove(`input-invalid`);
