@@ -134,6 +134,7 @@
     background-color: $main;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 
     @media screen and (max-width: $desktop-width - 1) {
       width: 90px;
