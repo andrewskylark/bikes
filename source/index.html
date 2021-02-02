@@ -8,10 +8,14 @@
   <meta name="description"
     content="интернет-магазин велосипедов: дорожные, горные, детские велосипеды и другие! Напишите нам и выберите велосипед мечты">
   <title>Велосипеды</title>
-  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" >
-  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-300.woff2" as="font" type="font/woff2" crossorigin="anonymous" >
-  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-600.woff2" as="font" type="font/woff2" crossorigin="anonymous" >
-  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" >
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-300.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-600.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-700.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
   <link rel="preload" href="css/style.min.css" as="style">
   <link rel="stylesheet" href="css/style.min.css">
   <!-- для проверящего: чтобы не показывало ошибку фавикона в консоли -->
@@ -75,12 +79,12 @@
 
             <div class="form__inputs">
               <label for="name" class="visually-hidden">Введите Ваше Имя</label>
-              <input type="text" name="name" id="name" placeholder="Введите Ваше Имя" minlength="6" maxlength="25"
+              <input type="text" name="name" id="name" placeholder="Введите Ваше Имя"
                 required>
 
               <label for="tel" class="visually-hidden">Введите Ваш номер телефона</label>
               <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required
-                pattern="^\+?\d{6,13}">
+                pattern="^\+?\d{0,11}">
             </div>
             <button class="form__btn btn" type="submit">Подобрать велосипед мечты</button>
           </form>

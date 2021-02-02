@@ -170,6 +170,11 @@
     display: block;
     height: auto;
     margin-bottom: 20px;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      height: 300px;
+      border-radius: 6px;
+    }
   }
 
   p {
