@@ -1,6 +1,7 @@
 'use strict';
-const MIN_TITLE_LENGTH = 6;
-const PHONE_PATTERN = /^[\+]?[0-9]{3,12}$/;
+const PHONE_PATTERN = /^[\+]?[0-9]{0,11}$/;
+const NUMS_ONLY = /\d/g;
+const PHONE_LENGTH = 11;
 
 (() => {
   const nav = document.querySelector(`.nav`);
@@ -15,12 +16,21 @@ const PHONE_PATTERN = /^[\+]?[0-9]{3,12}$/;
 
   if (navToggle) {
     navToggle.addEventListener(`click`, () => {
+
       if (nav.classList.contains(`nav--closed`)) {
         nav.classList.remove(`nav--closed`);
         nav.classList.add(`nav--opened`);
+
+        document.body.style.position = `fixed`;
+        document.body.style.top = `-${window.scrollY}px`;
       } else {
         nav.classList.add(`nav--closed`);
         nav.classList.remove(`nav--opened`);
+
+        const scrollY = document.body.style.top;
+        document.body.style.position = ``;
+        document.body.style.top = ``;
+        window.scrollTo(0, parseInt(scrollY || `0`, 10) * -1);
       }
     });
   }
@@ -30,31 +40,15 @@ const PHONE_PATTERN = /^[\+]?[0-9]{3,12}$/;
   const form = document.querySelector(`.page-header__form form`);
   const submitBtn = document.querySelector(`.form__btn`);
   const inputs = form.querySelectorAll(`input`);
-  const name = form.querySelector(`#name`);
   const tel = form.querySelector(`#tel`);
-
-  if (name) {
-    name.addEventListener(`input`, () => {
-      const length = name.value.length;
-
-      if (length < MIN_TITLE_LENGTH) {
-        name.setCustomValidity(`Минимальная длина - ${MIN_TITLE_LENGTH}, еще ${(MIN_TITLE_LENGTH - length)}`);
-      } else {
-        name.setCustomValidity(``);
-        name.classList.remove(`input-invalid`);
-      }
-      name.reportValidity();
-    });
-  }
 
   if (tel) {
     tel.addEventListener(`input`, () => {
 
       if (PHONE_PATTERN.test(tel.value) === false) {
-        tel.setCustomValidity(`введите номер в формате с +7123456789 или 8123456789`);
+        tel.setCustomValidity(`введите номер в формате +7xxxxxxxxxxx или 8xxxxxxxxxxx`);
       } else {
         tel.setCustomValidity(``);
-        tel.classList.remove(`input-invalid`);
       }
       tel.reportValidity();
     });
@@ -68,6 +62,17 @@ const PHONE_PATTERN = /^[\+]?[0-9]{3,12}$/;
         } else {
           input.classList.remove(`input-invalid`);
         }
+      }
+
+      if (tel.value.length === 0) {
+        tel.setCustomValidity(`Введите свой номер телефона!`);
+        tel.classList.add(`input-invalid`);
+      } else if (tel.value.match(NUMS_ONLY).length !== PHONE_LENGTH) {
+        tel.setCustomValidity(`Длина номера телефона - ${PHONE_LENGTH} знаков; осталось ввести: ${PHONE_LENGTH - tel.value.match(NUMS_ONLY).length}`);
+        tel.classList.add(`input-invalid`);
+      } else {
+        tel.setCustomValidity(``);
+        tel.classList.remove(`input-invalid`);
       }
     });
   }
