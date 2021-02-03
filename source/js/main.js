@@ -46,7 +46,7 @@ const PHONE_LENGTH = 11;
     tel.addEventListener(`input`, () => {
 
       if (PHONE_PATTERN.test(tel.value) === false) {
-        tel.setCustomValidity(`введите номер в формате +7xxxxxxxxxxx или 8xxxxxxxxxxx`);
+        tel.setCustomValidity(`Введите номер в формате +7xxxxxxxxxx или 8xxxxxxxxxx длиной 11 знаков`);
       } else {
         tel.setCustomValidity(``);
       }
@@ -67,8 +67,11 @@ const PHONE_LENGTH = 11;
       if (tel.value.length === 0) {
         tel.setCustomValidity(`Введите свой номер телефона!`);
         tel.classList.add(`input-invalid`);
-      } else if (tel.value.match(NUMS_ONLY).length !== PHONE_LENGTH) {
+      } else if (tel.value.match(NUMS_ONLY).length < PHONE_LENGTH) {
         tel.setCustomValidity(`Длина номера телефона - ${PHONE_LENGTH} знаков; осталось ввести: ${PHONE_LENGTH - tel.value.match(NUMS_ONLY).length}`);
+        tel.classList.add(`input-invalid`);
+      } else if (tel.value.match(NUMS_ONLY).length > PHONE_LENGTH) {
+        tel.setCustomValidity(`Длина номера телефона - ${PHONE_LENGTH} знаков; Вы ввели: ${tel.value.match(NUMS_ONLY).length}`);
         tel.classList.add(`input-invalid`);
       } else {
         tel.setCustomValidity(``);
