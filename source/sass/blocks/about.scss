@@ -26,6 +26,7 @@
   @media screen and (max-width: $tablet-width - 1) {
     flex-direction: column;
     align-content: center;
+    align-items: center;
   }
 
   li {
@@ -54,6 +55,8 @@
       justify-content: flex-start;
       margin-bottom: 38px;
       font-size: 18px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &::before {
