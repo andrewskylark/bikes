@@ -6,6 +6,7 @@ const PHONE_LENGTH = 11;
 (() => {
   const nav = document.querySelector(`.nav`);
   const navToggle = document.querySelector(`.nav__toggle`);
+  const page = document.querySelector(`.page`);
 
   const onElemEnableJs = (elemClass) => {
     document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
@@ -21,16 +22,26 @@ const PHONE_LENGTH = 11;
         nav.classList.remove(`nav--closed`);
         nav.classList.add(`nav--opened`);
 
-        document.body.style.position = `fixed`;
-        document.body.style.top = `-${window.scrollY}px`;
+        let navHeight = document.querySelector(`.nav__list`).offsetHeight;
+        const links = document.querySelectorAll(`.site-list__link`);
+
+        page.style.height = `${navHeight}px`;
+        page.style.overflowY = `hidden`;
+
+        for (let link of links) {
+          link.addEventListener(`click`, () => {
+            nav.classList.add(`nav--closed`);
+            nav.classList.remove(`nav--opened`);
+            page.style.height = `initial`;
+            page.style.overflowY = `auto`;
+          });
+        }
+
       } else {
         nav.classList.add(`nav--closed`);
         nav.classList.remove(`nav--opened`);
-
-        const scrollY = document.body.style.top;
-        document.body.style.position = ``;
-        document.body.style.top = ``;
-        window.scrollTo(0, parseInt(scrollY || `0`, 10) * -1);
+        page.style.height = `initial`;
+        page.style.overflowY = `auto`;
       }
     });
   }
