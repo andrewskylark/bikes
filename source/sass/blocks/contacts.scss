@@ -50,33 +50,13 @@
   font-size: 16px;
   color: rgba(0, 0, 0, 0.5);
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 0;
-  //   width: 26px;
-  //   height: 21px;
-  //   transform: translateY(-50%);
-  //   background-repeat: no-repeat;
-  // }
-
-  // &--mail::before {
-  //   background-image: url("../img/icon-mail.svg");
-  // }
-
-  // &--phone::before {
-  //   background-image: url("../img/icon-phone.svg");
-  //   height: 25px;
-  // }
-
   &:hover,
   &:focus {
     color: $text-accent;
 
     .contacts__icon {
-        --svg-mail: #{$main};
-        --svg-phone: #{$main};
+      --svg-phone: #{$main};
+      --svg-mail: #{$main};
     }
   }
 
