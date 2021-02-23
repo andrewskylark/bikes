@@ -15,6 +15,12 @@ let svgstore = require(`gulp-svgstore`);
 let posthtml = require(`gulp-posthtml`);
 let include = require(`posthtml-include`);
 let del = require(`del`);
+let ghPages = require(`gulp-gh-pages`);
+
+gulp.task(`deploy`, function () {
+  return gulp.src(`./build/**/*`)
+      .pipe(ghPages());
+});
 
 gulp.task(`css`, function () {
   return gulp.src(`source/sass/style.scss`)
