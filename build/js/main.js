@@ -2,14 +2,44 @@
 const PHONE_PATTERN = /^[\+]?[0-9]{0,11}$/;
 const NUMS_ONLY = /\d/g;
 const PHONE_LENGTH = 11;
+const ESC_KEY = `Escape`;
 
 (() => {
   const nav = document.querySelector(`.nav`);
   const navToggle = document.querySelector(`.nav__toggle`);
-  const page = document.querySelector(`.page`);
 
+  const isEscEvt = (evt, action) => {
+    if (evt.key === ESC_KEY) {
+      action();
+    }
+  };
+  const onMenuEscPress = (evt) => {
+    isEscEvt(evt, closeNav);
+  };
   const onElemEnableJs = (elemClass) => {
     document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
+  };
+  const openNav = () => {
+    nav.classList.remove(`nav--closed`);
+    nav.classList.add(`nav--opened`);
+    nav.style.position = `fixed`;
+    nav.style.height = `100vh`;
+    nav.style.width = `100vw`;
+    nav.style.overflowY = `scroll`;
+  };
+  const closeNav = () => {
+    nav.classList.remove(`nav--opened`);
+    nav.classList.add(`nav--closed`);
+    nav.style.position = ``;
+    nav.style.height = ``;
+    nav.style.width = ``;
+    nav.style.overflowY = ``;
+
+    document.body.style.position = ``;
+    document.body.style.top = ``;
+
+    window.removeEventListener(`resize`, closeNav);
+    document.removeEventListener(`keydown`, closeNav);
   };
 
   onElemEnableJs(`page-header__logo`);
@@ -19,29 +49,28 @@ const PHONE_LENGTH = 11;
     navToggle.addEventListener(`click`, () => {
 
       if (nav.classList.contains(`nav--closed`)) {
-        nav.classList.remove(`nav--closed`);
-        nav.classList.add(`nav--opened`);
-
-        let navHeight = document.querySelector(`.nav__list`).offsetHeight;
         const links = document.querySelectorAll(`.site-list__link`);
+        const firstLink = document.querySelector(`.site-list__link:first-of-type`);
 
-        page.style.height = `${navHeight}px`;
-        page.style.overflowY = `hidden`;
+        document.body.style.position = `fixed`;
+        document.body.style.top = `-${window.scrollY}px`;
+
+        openNav();
+        firstLink.focus();
 
         for (let link of links) {
-          link.addEventListener(`click`, () => {
-            nav.classList.add(`nav--closed`);
-            nav.classList.remove(`nav--opened`);
-            page.style.height = `initial`;
-            page.style.overflowY = `auto`;
-          });
+          link.addEventListener(`click`, closeNav);
         }
 
+        window.addEventListener(`resize`, closeNav);
+        document.addEventListener(`keydown`, onMenuEscPress);
+
       } else {
-        nav.classList.add(`nav--closed`);
-        nav.classList.remove(`nav--opened`);
-        page.style.height = `initial`;
-        page.style.overflowY = `auto`;
+        const scrollY = document.body.style.top;
+
+        window.scrollTo(0, parseInt(scrollY || `0`, 10) * -1);
+
+        closeNav();
       }
     });
   }
@@ -57,7 +86,7 @@ const PHONE_LENGTH = 11;
     tel.addEventListener(`input`, () => {
 
       if (PHONE_PATTERN.test(tel.value) === false) {
-        tel.setCustomValidity(`Введите номер в формате +7xxxxxxxxxx или 8xxxxxxxxxx длиной 11 знаков`);
+        tel.setCustomValidity(`Numbers only!`);
       } else {
         tel.setCustomValidity(``);
       }
@@ -76,13 +105,13 @@ const PHONE_LENGTH = 11;
       }
 
       if (tel.value.length === 0) {
-        tel.setCustomValidity(`Введите свой номер телефона!`);
+        tel.setCustomValidity(`It seems you forgot to leave your phone number!`);
         tel.classList.add(`input-invalid`);
       } else if (tel.value.match(NUMS_ONLY).length < PHONE_LENGTH) {
-        tel.setCustomValidity(`Длина номера телефона - ${PHONE_LENGTH} знаков; осталось ввести: ${PHONE_LENGTH - tel.value.match(NUMS_ONLY).length}`);
+        tel.setCustomValidity(`Phone number should be ${PHONE_LENGTH} digits, ${PHONE_LENGTH - tel.value.match(NUMS_ONLY).length} left`);
         tel.classList.add(`input-invalid`);
       } else if (tel.value.match(NUMS_ONLY).length > PHONE_LENGTH) {
-        tel.setCustomValidity(`Длина номера телефона - ${PHONE_LENGTH} знаков; Вы ввели: ${tel.value.match(NUMS_ONLY).length}`);
+        tel.setCustomValidity(`Phone number should be ${PHONE_LENGTH} digits, now ${tel.value.match(NUMS_ONLY).length}`);
         tel.classList.add(`input-invalid`);
       } else {
         tel.setCustomValidity(``);

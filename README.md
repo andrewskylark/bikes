@@ -1,16 +1,13 @@
-# Gulp template Liga A
-## Краткая инструкция по работе
-### Для начала работы у вас должент быть установлен:
-* Node.js v.10.15.3
-* Gulp v4
-* npm last version
-## Основные команды для работы
-* Установка - `npm i`
-* Запуск локального сервера - `npm start`
-* Сборка проекта без запуска локального сервера - `npm run-script build`
-* Запуск тестирования на соответствия код-гайдам - `npm test`
-
-## Все разработка ведёться в директории `source`
-## Итоговый код попадает в директорию `build`
-
-Если у вас есть желание что-то изменить или улучшить, пожалуйста, открывайте pull request с вашими комментариями.
+### Gulp template and page design provided by htlmacademy.ru
+## Gulp commands
+* Install - `npm i`
+* Run build and launch local server - `npm start`
+* Run build - `npm run-script build`
+* Test as per code guides - `npm test`
+## Development takes place in `source` folder from the scratch:
+* HTML5, CSS3/sass, JSE6+ (vanilla)
+* Gulp, imagemin (+WebP), SVG Sprite, CleanCSS
+* Opera, FF, Chrome, Safari
+* Adaptive: mobile, tablet and desktop
+* Mobile menu (able to work without JS), fixed main page under without scroll, focus on first link when opened, closing when resize page / click on any link / press Esc
+## Production code goes into `build` folder
