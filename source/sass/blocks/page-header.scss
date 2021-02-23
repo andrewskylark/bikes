@@ -123,6 +123,7 @@
     position: absolute;
     top: 23px;
     left: 25px;
+    z-index: 0;
   }
 
   @media screen and (max-width: $tablet-width - 1) {

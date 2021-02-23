@@ -3,6 +3,7 @@
 
   @media screen and (max-width: $desktop-width - 1) {
     align-self: flex-start;
+    z-index: 1;
 
     &.nav--no-js {
       width: 100%;
@@ -46,7 +47,7 @@
   }
 }
 
-// кнопка открыть/закрыть мобильное меню
+// open/close menu
 .nav--closed .nav__toggle {
   position: absolute;
   top: 0;
@@ -56,6 +57,7 @@
   background: $main;
   cursor: pointer;
   border: none;
+  z-index: 5;
 
   &:hover,
   &:focus {
@@ -71,8 +73,8 @@
     content: "";
     top: 50%;
     left: 50%;
-    width: 23px;
-    height: 1px;
+    width: 25px;
+    height: 3px;
     background-color: $text-main;
     box-shadow: 0 8px 0 0 $text-main,
       0 -8px 0 0 $text-main;
@@ -81,11 +83,12 @@
 
   &:hover::before,
   &:focus::before {
-    opacity: 0.6;
+    width: 27px;
+    height: 4px;
   }
 
   &:active::before {
-    opacity: 0.3;
+    opacity: 0.6;
   }
 }
 
@@ -98,33 +101,31 @@
   background: transparent;
   cursor: pointer;
   border: none;
+  transition: 300ms;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
 
   &::before,
   &::after {
     position: absolute;
     content: "";
-    top: 45%;
+    top: 50%;
     left: 0;
-    transform: translateY(-50%) rotate(45deg);
     width: 35px;
-    height: 2px;
-    background-color: rgba(20, 21, 23, 0.2);
+    height: 3px;
+    background-color: rgba(20, 21, 23, 0.6);
+    transform: translateY(-50%) rotate(45deg);
   }
 
   &::after {
     transform: translateY(-50%) rotate(-45deg);
   }
 
-  &:hover::before,
-  &:focus::before,
-  &:hover::after,
-  &:focus::after {
-    opacity: 0.6;
-  }
-
   &:active::before,
   &:active::after {
-    opacity: 0.3;
+    opacity: 0.6;
   }
 }
 
